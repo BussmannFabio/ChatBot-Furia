@@ -1,0 +1,162 @@
+body {
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .chat-container {
+    width: 505px;
+    height: 600px;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative; 
+  }
+  
+  .chat-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('assests/FuriaLogo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    opacity: 0.11;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  header,
+  .chat-box,
+  #user-input {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  header {
+    padding: 10px;
+    text-align: center;
+    background-color: #000;
+  }
+  
+  header img {
+    height: 90px;
+  }
+  
+  .chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 20px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+  
+  .message.user {
+    background: #232323;
+    align-self: flex-end;
+    color: #fff;
+    border-bottom-right-radius: 0;
+    box-shadow: 0 0 6px #0ff5;
+  }
+  
+  .message.user::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 10px;
+    border: 8px solid transparent;
+    border-left-color: #232323;
+  }
+  
+  .message.bot {
+    background: #0f0f0f;
+    align-self: flex-start;
+    color: #00ffaa;
+    border-bottom-left-radius: 0;
+    box-shadow: 0 0 6px #00ffaa44;
+  }
+  
+  .message.bot::after {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 10px;
+    border: 8px solid transparent;
+    border-right-color: #0f0f0f;
+  }
+  
+  #user-input {
+    border: none;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 600px) {
+    .chat-container {
+      width: 95vw;
+      height: 90vh;
+      border-radius: 8px;
+    }
+  
+    header img {
+      height: 70px;
+    }
+  
+    .message {
+      font-size: 14px;
+      padding: 10px 14px;
+    }
+  
+    #user-input {
+      font-size: 15px;
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .chat-container {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+  
+    header {
+      padding: 8px;
+    }
+  
+    header img {
+      height: 60px;
+    }
+  
+    .message {
+      font-size: 13px;
+    }
+  
+    #user-input {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
